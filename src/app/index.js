@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dz2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap','LocalStorageModule'])
+angular.module('dz2', [ 'ngResource', 'ui.router','LocalStorageModule'])
   .config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider) {
     $stateProvider
       .state('home', {
