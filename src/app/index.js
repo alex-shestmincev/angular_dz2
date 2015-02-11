@@ -1,13 +1,16 @@
 'use strict';
 
-angular.module('dz2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap'])
-  .config(function ($stateProvider, $urlRouterProvider) {
+angular.module('dz2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap','LocalStorageModule'])
+  .config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider) {
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/guest/guest.html',
+        controller: 'GuestCtrl'
       });
+
+    localStorageServiceProvider.setPrefix('guests');
+    localStorageServiceProvider.setStorageType('sessionStorage');
 
     $urlRouterProvider.otherwise('/');
   })
